@@ -51,4 +51,4 @@ services:
       - django
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-      - /var/log/nginx_cuba:/var/log/nginx
+      - ./var/log/nginx_cuba:/var/log/nginx

@@ -36,24 +36,23 @@ RUN ln -nfs /usr/bin/wkhtmltopdf /usr/local/bin/wkhtmltopdf
 RUN apt-get install -y unzip
 ENV QT_QPA_FONTDIR=/root/.fonts/
 RUN wget -O "Raleway.zip" "https://fonts.google.com/download?family=Raleway" \
-    && unzip -u "Raleway.zip" -d /root/.fonts \
+    && unzip -o -u "Raleway.zip" -d /root/.fonts \
     && rm -f "Raleway.zip"
 RUN wget -O "Inconsolata.zip" "https://fonts.google.com/download?family=Inconsolata" \
-    && unzip -u "Inconsolata.zip" -d /root/.fonts \
+    && unzip -o -u "Inconsolata.zip" -d /root/.fonts \
     && rm -f "Inconsolata.zip"
 RUN wget -O "OpenSans.zip" "https://fonts.google.com/download?family=Open+Sans" \
-    && unzip -u "OpenSans.zip" -d /root/.fonts \
+    && unzip -o -u "OpenSans.zip" -d /root/.fonts \
     && rm -f "OpenSans.zip"
 RUN wget -O "CabinSketch.zip" "https://fonts.google.com/download?family=Cabin+Sketch" \
-    && unzip -u "CabinSketch.zip" -d /root/.fonts \
+    && unzip -o -u "CabinSketch.zip" -d /root/.fonts \
     && rm -f "CabinSketch.zip"
 RUN wget -O "Lato.zip" "https://fonts.google.com/download?family=Lato" \
-    && unzip -u "Lato.zip" -d /root/.fonts \
+    && unzip -o -u "Lato.zip" -d /root/.fonts \
     && rm -f "Lato.zip"
 RUN fc-cache -f
 
 ADD . /code/
-
 
 RUN pip install biopython==1.71
 ARG CACHEBUST=10
